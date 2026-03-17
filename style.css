@@ -22,7 +22,7 @@ html{
 
 body{
   margin:0;
-  font-family:"Inter",system-ui,sans-serif;
+  font-family:"Inter", system-ui, sans-serif;
   color:var(--text);
   background:radial-gradient(circle at top left, #14233d 0%, #08111f 42%, #050b15 100%);
   min-height:100vh;
@@ -107,14 +107,14 @@ nav a:hover{
 }
 
 h1{
-  font-size:clamp(2.6rem,6vw,4.8rem);
+  font-size:clamp(2.6rem, 6vw, 4.8rem);
   line-height:1.02;
   margin:.1rem 0;
   word-break:break-word;
 }
 
 h2{
-  font-size:clamp(1.15rem,2vw,1.55rem);
+  font-size:clamp(1.15rem, 2vw, 1.55rem);
   color:var(--muted);
   font-weight:600;
   margin:.5rem 0 1rem;
@@ -142,7 +142,7 @@ h2{
   border-radius:14px;
   font-weight:700;
   border:1px solid var(--border);
-  transition:transform .2s ease, opacity .2s ease;
+  transition:transform .2s ease, opacity .2s ease, border-color .2s ease;
 }
 
 .btn:hover{
@@ -162,7 +162,7 @@ h2{
 
 .mini-stats{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:14px;
   margin-top:28px;
 }
@@ -272,7 +272,7 @@ h2{
 
 .section-heading h2{
   color:var(--text);
-  font-size:clamp(1.8rem,4vw,2.6rem);
+  font-size:clamp(1.8rem, 4vw, 2.6rem);
 }
 
 .section-row{
@@ -295,11 +295,11 @@ h2{
 }
 
 .skills-grid{
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
 }
 
 .projects-grid{
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2, 1fr);
 }
 
 .card,
@@ -342,10 +342,17 @@ h2{
   font-weight:700;
 }
 
+.project-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
 .project-card ul{
   padding-left:18px;
   color:var(--muted);
   line-height:1.8;
+  margin-bottom:0;
 }
 
 .project-actions{
@@ -353,6 +360,10 @@ h2{
   gap:10px;
   flex-wrap:wrap;
   margin-top:16px;
+}
+
+.project-actions .btn{
+  flex:1 1 160px;
 }
 
 .filters{
@@ -385,7 +396,7 @@ h2{
 .cert-grid{
   margin-top:18px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:18px;
 }
 
@@ -529,7 +540,7 @@ h2{
 .media-grid,
 .video-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(2, 1fr);
   gap:16px;
   margin-top:20px;
 }
@@ -641,7 +652,7 @@ body.light-mode{
   }
 
   .mini-stats{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, 1fr);
   }
 
   .cert-thumb{
