@@ -53,7 +53,7 @@ function getThumbLabel(item) {
 function getFilePath(fileName) {
   if (!fileName) return "#";
   if (fileName.startsWith("http://") || fileName.startsWith("https://")) return fileName;
-  const cleanName = fileName.startsWith("certificates/") ? fileName.replace("certificates/", "") : fileName;
+  const cleanName = fileName.replace(/^certificates\//, "");
   return encodeURIComponent(cleanName);
 }
 
