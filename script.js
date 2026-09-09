@@ -24,26 +24,27 @@ function niceDate(value) {
 }
 
 function getThumbClass(item) {
-  const text = `${item.category || ""} ${item.type || ""} ${item.issuer || ""}`.toLowerCase();
+  const text = `${item.category || ""} ${item.type || ""} ${item.issuer || ""} ${item.title || ""}`.toLowerCase();
 
   if (text.includes("internship") || text.includes("qtest")) return "thumb-internship";
   if (text.includes("microsoft")) return "thumb-microsoft";
   if (text.includes("coursera")) return "thumb-coursera";
   if (text.includes("iot")) return "thumb-iot";
   if (text.includes("robot")) return "thumb-robotics";
-  if (text.includes("machine learning") || text.includes("ml")) return "thumb-ml";
+  if (text.includes("machine learning") || text.includes("ml") || text.includes("prompt") || text.includes("ai")) return "thumb-ml";
 
   return "thumb-default";
 }
 
 function getThumbLabel(item) {
-  const text = `${item.category || ""} ${item.type || ""}`.toLowerCase();
+  const text = `${item.category || ""} ${item.type || ""} ${item.title || ""}`.toLowerCase();
 
   if (text.includes("internship") || text.includes("qtest")) return "INT";
   if (text.includes("microsoft")) return "MS";
   if (text.includes("coursera")) return "CS";
   if (text.includes("iot")) return "IoT";
   if (text.includes("robot")) return "RB";
+  if (text.includes("prompt") || text.includes("prompter")) return "AI";
   if (text.includes("machine learning") || text.includes("ml")) return "ML";
 
   return "PDF";
@@ -73,8 +74,9 @@ function createCertificateCard(item) {
         </div>
 
         <h3>${item.title || "Untitled Certificate"}</h3>
-        <p>${item.issuer || "Unknown Issuer"}</p>
+        <p><strong>${item.issuer || "Unknown Issuer"}</strong></p>
         <p>${niceDate(item.date)}</p>
+        ${item.description ? `<p class="cert-description" style="font-size: 0.88rem; color: var(--muted); margin-top: 8px; line-height: 1.5;">${item.description}</p>` : ""}
         <span class="cert-link">${hasFile ? "Open Certificate →" : "Certificate file missing"}</span>
       </article>
     </a>
