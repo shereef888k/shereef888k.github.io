@@ -52,7 +52,9 @@ function getThumbLabel(item) {
 
 function getFilePath(fileName) {
   if (!fileName) return "#";
-  return `certificates/${encodeURIComponent(fileName)}`;
+  if (fileName.startsWith("http://") || fileName.startsWith("https://")) return fileName;
+  const cleanName = fileName.startsWith("certificates/") ? fileName.replace("certificates/", "") : fileName;
+  return encodeURIComponent(cleanName);
 }
 
 function createCertificateCard(item) {
