@@ -127,6 +127,9 @@ export function ResumeSheet() {
               <p className="text-xs text-mist mt-0.5">
                 {e.degree} · <span className="text-bone/80">{e.score}</span>
               </p>
+              {'collaboration' in e && (e as { collaboration?: string }).collaboration && (
+                <p className="text-[11px] text-[#4cc9ff] font-medium">{(e as { collaboration?: string }).collaboration}</p>
+              )}
             </div>
           ))}
 

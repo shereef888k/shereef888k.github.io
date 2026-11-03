@@ -4,7 +4,7 @@ import { EASE, SectionHeading, Tilt } from './fx';
 
 export default function About() {
   const facts = [
-    { k: 'Education', v: 'BCA (AI & ML, Robotics & IoT)', s: `${education[0].school}` },
+    { k: 'Education', v: 'BCA (AI & ML, Robotics & IoT)', s: `${education[0].school} (in collab with Microsoft) · 2026` },
     { k: 'Industry Experience', v: `${experience[0].role}, ${experience[0].company}`, s: experience[0].period },
     { k: 'Primary Focus', v: 'AI / Machine Learning & Robotics', s: 'with Python, IoT & Full-Stack' },
     { k: 'Location', v: profile.location, s: 'India' },

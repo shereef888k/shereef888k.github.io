@@ -39,8 +39,10 @@ export const education = [
     school: 'Yenepoya (Deemed to be University)',
     place: 'Mangalore, Karnataka',
     degree: 'Bachelor of Computer Applications (BCA – Artificial Intelligence, Machine Learning, Robotics & IoT)',
+    collaboration: 'In collaboration with Microsoft',
     period: '2023 – 2026',
     score: 'Graduated 2026',
+    photo: './graduation.jpeg',
   },
 ];
 
@@ -237,6 +239,15 @@ export type Achievement = {
 };
 
 export const achievements: Achievement[] = [
+  {
+    id: 'bca-graduation-convocation',
+    title: 'BCA Convocation & Degree',
+    org: 'Yenepoya University & Microsoft',
+    detail: 'Proudly completed Bachelor of Computer Applications (BCA) in AI, Machine Learning, Robotics & IoT in collaboration with Microsoft — three years of learning, dedication, and growth leading to this milestone moment.',
+    laurel: 'Graduation 2026',
+    link: './graduation.jpeg',
+    images: ['./graduation.jpeg'],
+  },
   {
     id: 'nss-volunteer-award',
     title: 'University NSS Best Volunteer Award',
@@ -583,6 +594,14 @@ export const seasons: Season[] = [
         runtime: '2026',
         palette: crimson,
       },
+      {
+        code: 'S04 E04',
+        title: 'The Convocation',
+        description: 'A Milestone Achieved — Completed Bachelor of Computer Applications (BCA) in AI, Machine Learning, Robotics and IoT from Yenepoya University in collaboration with Microsoft.',
+        tags: ['Convocation 2026', 'Graduation', 'Microsoft Collab'],
+        runtime: '2026',
+        palette: jade,
+      },
     ],
   },
   {
@@ -606,6 +625,7 @@ export const seasons: Season[] = [
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 
 export const topPicks: TopPick[] = [
+  { label: 'Milestone Achieved', title: 'BCA Convocation 2026', detail: 'Yenepoya University in collaboration with Microsoft', palette: jade },
   { label: 'The AI Original', title: 'Hospital Triage AI', detail: 'Real-time patient symptom analysis & clinical urgency triage', palette: crimson },
   { label: 'Featured Honor', title: 'NSS Best Volunteer Award', detail: 'University Award 2025–26 presented by Dr. Amitabh Ranjan', palette: jade },
   { label: 'Robotics Showcase', title: 'Human Following Robot', detail: 'Autonomous tracking prototype with 4 photos & 6 videos', palette: amber },
@@ -614,7 +634,6 @@ export const topPicks: TopPick[] = [
   { label: 'HealthTech Original', title: 'Medical Report Analyzer', detail: 'NLP-based biomarker extraction & diagnostic insights', palette: ocean },
   { label: 'Global AI Program', title: 'One Million Prompters', detail: 'Dubai Future Foundation / DCAI Prompt Engineering', palette: crimson },
   { label: 'Credentials', title: '30+ Certifications', detail: 'Microsoft • Coursera • Wingspan • Dubai Future Foundation', palette: jade },
-  { label: 'Academic High', title: 'BCA in AI & Robotics', detail: 'Yenepoya (Deemed to be University) • Graduated 2026', palette: violet },
   { label: 'Community Platform', title: 'Blood Donation Connect', detail: 'Real-time emergency donor registry & dispatch system', palette: crimson },
 ];
 
@@ -622,10 +641,10 @@ export type IntroSlide = { kicker: string; title: string; lines: string[]; chips
 
 export const introSlides: IntroSlide[] = [
   {
-    kicker: 'Education',
+    kicker: 'Milestone Achieved',
     title: 'BCA · AI, ML & Robotics',
-    lines: ['Yenepoya (Deemed to be University), Mangalore', 'Specialized in AI, ML, Robotics and IoT · Graduated 2026'],
-    chips: ['AI & ML', 'Robotics & IoT', 'Yenepoya'],
+    lines: ['Yenepoya (Deemed to be University), Mangaluru', 'In collaboration with Microsoft · Convocation 2026', 'Three years of learning, dedication & technological innovation'],
+    chips: ['Graduated 2026', 'Yenepoya', 'Microsoft Collaboration'],
   },
   {
     kicker: 'Experience',

@@ -31,8 +31,74 @@ export default function Achievements() {
       <SectionHeading
         kicker="Awards & Recognition"
         title="Top Moments"
-        aside={<p className="max-w-xs text-sm text-mist">Leadership honors, university accolades, and 30+ verified credentials.</p>}
+        aside={<p className="max-w-xs text-sm text-mist">Academic milestones, leadership honors, and 30+ verified credentials.</p>}
       />
+
+      {/* Featured Milestone: BCA Graduation & Convocation */}
+      <div className="gutter mb-10">
+        <div className="relative overflow-hidden rounded-2xl bg-[radial-gradient(120%_100%_at_50%_0%,#18233a,#090d16_60%,#07070a)] p-6 sm:p-10 ring-1 ring-[#4cc9ff]/30">
+          <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#4cc9ff]/80 to-transparent" />
+          <div aria-hidden className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-[#4cc9ff]/15 blur-3xl" />
+
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <span className="rounded-full bg-[#4cc9ff]/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#4cc9ff] ring-1 ring-[#4cc9ff]/30">
+              🎓 A Milestone Achieved
+            </span>
+            <span className="text-xs font-semibold tracking-wider text-mist">Convocation 2026</span>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_minmax(0,340px)] items-center">
+            <div>
+              <h3 className="font-display text-3xl sm:text-5xl tracking-wide text-bone">
+                BCA in AI, Machine Learning, Robotics & IoT
+              </h3>
+              <p className="mt-2 text-sm sm:text-base font-semibold text-[#4cc9ff]">
+                Yenepoya (Deemed to be University), Mangaluru — In collaboration with Microsoft
+              </p>
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-bone/85">
+                Three years of learning, challenges, dedication, and growth have led to this special moment. Completed Bachelor of Computer Applications with specialized focus on Artificial Intelligence, Machine Learning, Robotics, and IoT.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-mist">
+                This journey has been more than earning a degree — it has been about building knowledge, developing new skills, overcoming challenges, and preparing for the opportunities ahead. Grateful to teachers, mentors, family, and friends who supported every step.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#Graduation</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#ArtificialIntelligence</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#MachineLearning</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#Robotics</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#IoT</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#YenepoyaUniversity</span>
+                <span className="rounded-full bg-white/[0.08] px-3 py-1 text-bone">#MicrosoftCollaboration</span>
+              </div>
+            </div>
+
+            {/* Stage Ceremony Photo */}
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => setSelectedPhoto('./graduation.jpeg')}
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedPhoto('./graduation.jpeg')}
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-ink ring-1 ring-white/10 transition hover:ring-[#4cc9ff]/60"
+            >
+              <img
+                src="./graduation.jpeg"
+                alt="Muhammed Shereef K Convocation Ceremony on Stage with Degree Certificate"
+                loading="lazy"
+                className="h-auto w-full max-h-[380px] object-cover object-top transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-bone opacity-0 transition group-hover:opacity-100">
+                <span className="font-semibold">Convocation Stage Moment</span>
+                <span className="rounded-full bg-black/60 p-1.5 backdrop-blur">🔍</span>
+              </div>
+            </div>
+          </div>
+
+          <blockquote className="mt-8 rounded-xl bg-white/[0.03] p-4 border-l-4 border-[#4cc9ff] text-xs sm:text-sm italic text-bone/90">
+            &ldquo;This is not the end of learning, but the beginning of a new chapter. I look forward to applying my knowledge, gaining practical experience, and continuing to grow in the world of technology. Onward to new opportunities and bigger goals! 🚀&rdquo;
+          </blockquote>
+        </div>
+      </div>
 
       {/* Featured Award: University NSS Best Volunteer Award */}
       <div className="gutter mb-12">
