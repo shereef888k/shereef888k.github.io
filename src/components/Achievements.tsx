@@ -80,12 +80,26 @@ export default function Achievements() {
               onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedPhoto('./graduation.jpeg')}
               className="group relative cursor-pointer overflow-hidden rounded-xl bg-ink ring-1 ring-white/10 transition hover:ring-[#4cc9ff]/60"
             >
-              <img
-                src="./graduation.jpeg"
-                alt="Muhammed Shereef K Convocation Ceremony on Stage with Degree Certificate"
-                loading="lazy"
-                className="h-auto w-full max-h-[380px] object-cover object-top transition duration-500 group-hover:scale-105"
-              />
+              <picture>
+                <source srcSet="./assets/graduation.webp" type="image/webp" />
+                <source srcSet="./graduation.jpeg" type="image/jpeg" />
+                <img
+                  src="./graduation.jpeg"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (!img.dataset.fallbackCount) {
+                      img.dataset.fallbackCount = '1';
+                      img.src = './public/graduation.jpeg';
+                    } else if (img.dataset.fallbackCount === '1') {
+                      img.dataset.fallbackCount = '2';
+                      img.src = './assets/graduation.jpeg';
+                    }
+                  }}
+                  alt="Muhammed Shereef K Convocation Ceremony on Stage with Degree Certificate"
+                  loading="lazy"
+                  className="h-auto w-full max-h-[380px] object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-bone opacity-0 transition group-hover:opacity-100">
                 <span className="font-semibold">Convocation Stage Moment</span>
@@ -285,7 +299,18 @@ export default function Achievements() {
               exit={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={selectedPhoto} alt="Award ceremony moment" className="max-h-[85vh] w-auto object-contain" />
+              <img
+                src={selectedPhoto}
+                alt="Enlarged moment"
+                className="max-h-[85vh] w-auto object-contain"
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  if (!img.dataset.fallbackCount && selectedPhoto?.includes('graduation')) {
+                    img.dataset.fallbackCount = '1';
+                    img.src = './public/graduation.jpeg';
+                  }
+                }}
+              />
               <button
                 type="button"
                 onClick={() => setSelectedPhoto(null)}
